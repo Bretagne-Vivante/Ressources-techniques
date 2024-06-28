@@ -1,0 +1,26 @@
+--environnement pour ouvrir jupyterlab 
+(ia_validat_db) mamba install jupyter jupyterlab
+(ia_validat_db) mamba install nodejs myst-nb jupyterlab-myst 
+
+
+--je rends l'environnement virtuel crée dispo dans jupyterlab
+(ia_validat_db)  mamba install  ipython ipykernel
+(ia_validat_db)  python -m ipykernel install --user --name=ia_validat_db --display-name="ia_validat_db (Python 3.12)"
+
+--commande pour lancer jupyterlab depuis le terminal du serveur linux
+jupyter lab --ip=xxx.xxx.xxx.xx --no-browser
+
+-----dans le terminal on verra url a copier dans navigateur pour le lancer
+--copier l'adresse qui apparait par simple sélection 
+    http://xxx.xxx.xxx.xx:xxxx/lab?token=d07c991019243cc6b654ad947a14c284a1a6be7561f8b063
+
+--raccourcis pour sortir de jupyterlab dans le terminal
+controle C
+
+--lancement d'un script python créant un csv via le terminal dans jupyterlab
+mamba activate ia_validat_db
+cd /home/bdd/Documents/python/test_machine_learning
+nohup python test_select_nohup.py &
+
+--script ORA
+nohup python predic_validation_arbre_voisin_ora.py &

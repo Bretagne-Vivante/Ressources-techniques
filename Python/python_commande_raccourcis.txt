@@ -1,0 +1,13 @@
+comande python
+--du terminal
+python
+--on voit le prompte >>> qui dit qu'on est dans codeur python
+--pour sortir de python 
+exit()
+--pour sortir de jupyterlab dans le terminal
+controle C
+----------
+--raccourcis Jupyter Notebook
+https://datascientest.com/raccourcis-jupyter-notebook
+--execution des codes
+MAJ Entree

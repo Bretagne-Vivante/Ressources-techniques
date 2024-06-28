@@ -1,0 +1,45 @@
+---liste des environnements python installés
+mamba env list
+
+-----création d'environnements virtuels pour avoir code fonctionnel si python de base a été mis à jour depuis la génération du code
+-- 1 - environnement pour IA
+mamba create --name ia_validat_db -c conda-forge python=3.12 numpy pandas matplotlib folium cartopy geocoder xarray requests psycopg2 sqlalchemy scikit-learn 
+
+--activation
+mamba activate ia_validat_db
+
+--pour ouvrir jupyterlab 
+(ia_validat_db) mamba install jupyter jupyterlab
+(ia_validat_db) mamba install nodejs myst-nb jupyterlab-myst 
+
+
+--je rends l'environnement virtuel crée dispo dans jupyterlab
+(ia_validat_db)  mamba install  ipython ipykernel
+(ia_validat_db)  python -m ipykernel install --user --name=ia_validat_db --display-name="ia_validat_db (Python 3.12)"
+
+--lancement jupyterlab (qui permet de sélectionner environnement virtuel)
+(ia_validat_db) jupyter lab --ip=xxx.xxx.xxx.xx --no-browser
+
+--ajout d'un bibliothèque a posteriori ici seaborn
+(ia_validat_db)  mamba install  seaborn
+
+--desactivation de l'environnement virtuel -> retour à base)
+mamba deactivate
+
+----------------------------------------------
+---2 - environnement pour tensorflow (nécessite Python 3.9)
+mamba create --name ia_39 -c conda-forge python=3.9 numpy pandas matplotlib sqlalchemy scikit-learn tensorflow
+--activation
+mamba activate ia_39
+--je le rends dispo dans jupyterlab
+(ia_39)  mamba install  ipython ipykernel
+(ia_39)  python -m ipykernel install --user --name=ia_photo --display-name="ia_39(Python 3.9)"
+
+--ajout (via terminal dans jupyterlab)
+(ia_39) mamba install psycopg2
+mamba install ipywidgets
+
+mamba deactivate
+(base) jupyter lab --ip=xxx.xxx.xx.xx --no-browser
+
+
